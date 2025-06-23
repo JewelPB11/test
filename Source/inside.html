@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voice Calendar Agent</title>
+
+  <!-- Load Google API -->
+  <script src="https://apis.google.com/js/api.js"></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      max-width: 600px;
+      width: 100%;
+    }
+    .voice-button {
+      background: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 50px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .status, .calendar-events {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .event-item {
+      padding: 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗣️ Voice Calendar Agent</h1>
+    <p>Say: "What's on my calendar today?" or "Add a meeting with John tomorrow at 3 PM"</p>
+
+    <button id="authBtn" class="voice-button">Sign in with Google</button>
+    <button id="voiceBtn" class="voice-button" disabled>Start Voice Command</button>
+
+    <div id="status" class="status"></div>
+    <div id="calendar-events" class="calendar-events"></div>
+  </div>
+
+  <!-- Load our logic -->
+  <script src="calendar-agent.js"></script>
+</body>
+</html>
